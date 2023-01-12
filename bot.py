@@ -1,5 +1,6 @@
 import os
 import discord
+import asyncio
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,8 +17,10 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = message.channel
+    user = message.author
 
     if message.content.startswith('!pstart'):
-        await channel.send('starting game')
+        pass
+
 
 client.run(os.getenv('TOKEN'))
